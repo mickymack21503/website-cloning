@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Netflix Clone</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header class="header">
+        <img src="netflix.png" alt="Netflix Logo" class="logo">
+        <nav class="nav">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="tvshows.html">TV Shows</a></li>
+                <li><a href="movies.html">Movies</a></li>
+                <li><a href="newpopular.html">New & Popular</a></li>
+                <li><a href="mylist.html">My List</a></li>
+            </ul>
+        </nav>
+        <div class="search-bar">
+            <input type="text" id="searchInput" placeholder="Search...">
+            <button class="btn" id="searchBtn">Search</button>
+        </div>
+        <div class="user-profile">
+            <img src="user.png" alt="User Profile" id="loginBtn">
+        </div>
+    </header>
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Unlimited movies, TV shows, and more.</h1>
+            <p>Watch anywhere. Cancel anytime.</p>
+            <button class="btn">Watch Now</button>
+        </div>
+    </section>
+    <section class="movies-section">
+        <h2>Popular on Netflix</h2>
+        <div class="movies" id="movies">
+            <img src="Avengers.jpg" alt="Movie 1" data-trailer="trailer1.mp4">
+            <img src="Blackpioneer.jpg" alt="Movie 2" data-trailer="trailer2.mp4">
+            <img src="Dracula.jpg" alt="Movie 3" data-trailer="trailer3.mp4">
+            <img src="Starwars.jpg" alt="Movie 4" data-trailer="trailer4.mp4">
+            <img src="Bonzo.jpg" alt="Movie 5" data-trailer="trailer5.mp4">
+        </div>
+        <button class="slider-btn prev" onclick="slide(-1)">&#10094;</button>
+        <button class="slider-btn next" onclick="slide(1)">&#10095;</button>
+    </section>
+    <section class="movies-section">
+        <h2>Trending Now</h2>
+        <div class="movies" id="trending">
+            <img src="Unitetheleague.jpg" alt="Movie 1" data-trailer="trailer1.mp4">
+            <img src="Rangers.jpg" alt="Movie 2" data-trailer="trailer2.mp4">
+            <img src="Avatar.jpg" alt="Movie 3" data-trailer="trailer3.mp4">
+            <img src="Alien.jpg" alt="Movie 4" data-trailer="trailer4.mp4">
+            <img src="Englishvinglish.jpg" alt="Movie 5" data-trailer="trailer5.mp4">
+
+        </div>
+        <button class="slider-btn prev" onclick="slide(-1, 'trending')">&#10094;</button>
+        <button class="slider-btn next" onclick="slide(1, 'trending')">&#10095;</button>
+    </section>
+    <div id="loginModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Login</h2>
+            <form>
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username"><br>
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password"><br>
+                <button type="submit" class="btn">Login</button>
+            </form>
+        </div>
+    </div>
+    <div id="trailerModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <video controls id="trailerVideo">
+                <source src="" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+    </div>
+    <script src="scripts.js"></script>
+</body>
+</html>
